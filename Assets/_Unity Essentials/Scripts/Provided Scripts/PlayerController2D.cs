@@ -30,6 +30,11 @@ public class PlayerController2D : MonoBehaviour
         {
             // Set movement direction based on input
             movement = new Vector2(horizontalInput, verticalInput);
+
+            // Normalize if the magnitude is greater than 1 (diagonal)
+            if (movement.sqrMagnitude > 1f)
+                movement.Normalize();
+
             // Optionally rotate the player based on movement direction
             RotatePlayer(horizontalInput, verticalInput);
         }

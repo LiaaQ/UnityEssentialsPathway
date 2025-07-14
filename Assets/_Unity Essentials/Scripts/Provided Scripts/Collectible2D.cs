@@ -12,7 +12,7 @@ public class Collectible2D : MonoBehaviour
     void Update()
     {
 
-        transform.Rotate(0, 0, rotationSpeed);
+        transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
         
     }
 
