@@ -4,6 +4,7 @@ public class Collectible : MonoBehaviour
 {
     public float rotationSpeed = 0.5f;
     public GameObject onCollectEffect;
+    public AudioClip collectSound;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,6 +28,7 @@ public class Collectible : MonoBehaviour
             if (onCollectEffect != null)
             {
                 Instantiate(onCollectEffect, transform.position, transform.rotation);
+                AudioSource.PlayClipAtPoint(collectSound, transform.position);
             }
         }
     }
